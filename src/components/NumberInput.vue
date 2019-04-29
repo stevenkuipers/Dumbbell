@@ -7,6 +7,7 @@
       :value="filteredNumber"
       v-on:change="emit"
       step=".1"
+      min="0"
       >
   </div>
 </template>

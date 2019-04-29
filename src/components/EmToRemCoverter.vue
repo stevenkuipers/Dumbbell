@@ -10,7 +10,7 @@ export default {
   name: 'EmToRemConverter',
   computed : {
     filteredNumber : function(){
-      return this.sizing.value.match(/^((?![a-z]).)*/i)[0]
+      return this.em.match(/^((?![a-z]).)*/i)[0]
     }
   },
 };
