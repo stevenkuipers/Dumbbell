@@ -8,10 +8,10 @@
 export default {
   props: ['em', 'rem'],
   name: 'EmToRemConverter',
-  computed : {
-    filteredNumber : function(){
-      return this.em.match(/^((?![a-z]).)*/i)[0]
-    }
+  computed: {
+    filteredNumber() {
+      return this.em.match(/^((?![a-z]).)*/i)[0];
+    },
   },
 };
 </script>

@@ -15,11 +15,11 @@
 export default {
   props: ['colordef'],
   name: 'ColorInput',
-  methods : {
-    emit: function(e){
-      const val = { 'property' : this.colordef.color, 'value': e.target.value}
-      this.$emit( 'setStyle', val )
-    }
+  methods: {
+    emit(e) {
+      const val = { property: this.colordef.color, value: e.target.value };
+      this.$emit('setStyle', val);
+    },
   },
 };
 </script>

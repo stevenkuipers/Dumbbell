@@ -6,7 +6,7 @@
       type="number"
       :value="filteredNumber"
       v-on:change="emit"
-      step=".1"
+      :step="step"
       min="0"
       >
   </div>
@@ -14,26 +14,26 @@
 
 <script>
 export default {
-  props: ['sizing'],
+  props: ['sizing', 'step'],
   name: 'NumberInput',
-  data : function(){
+  data() {
     return {
-      unit : ''
-    }
+      unit: '',
+    };
   },
-  methods : {
-    emit: function(e){
-      const val = { 'property' : this.sizing.property, 'value': e.target.value + this.unit}
-      this.$emit( 'setStyle', val )
-    }
+  methods: {
+    emit(e) {
+      const val = { property: this.sizing.property, value: e.target.value + this.unit };
+      this.$emit('setStyle', val);
+    },
   },
-  created : function() {
-    return this.unit = this.sizing.value.match(/[a-z]+/gi)[0]
+  created() {
+    return this.unit = this.sizing.value.match(/[a-z]+/gi)[0];
   },
-  computed : {
-    filteredNumber : function(){
-      return this.sizing.value.match(/^((?![a-z]).)*/i)[0]
-    }
+  computed: {
+    filteredNumber() {
+      return this.sizing.value.match(/^((?![a-z]).)*/i)[0];
+    },
   },
 };
 </script>
