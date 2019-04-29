@@ -52,7 +52,7 @@
         <div class="">
           <label for="font-picker-primary">Primary Font</label>
           <font-picker
-          :api-key="'AIzaSyBSX5fgOg6F8DYZ1AlVgn8S9eyEL1hKSEs'"
+          :api-key="apiKey"
           :options="{name: 'primary',
                     variants: ['200', '300'],
                     sort: 'popularity'}"
@@ -62,11 +62,10 @@
           :id="'font-picker-primary'"
           >
           </font-picker>
-
           <p class="apply-font-primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <label for="font-picker-secondary">Secondary Font</label>
           <font-picker
-          :api-key="'AIzaSyBSX5fgOg6F8DYZ1AlVgn8S9eyEL1hKSEs'"
+          :api-key="apiKey"
           :options="{name: 'secondary',
                     variants: ['200', '300'],
                     sort: 'popularity'}"
@@ -114,6 +113,7 @@ export default {
       sizing: [],
       containers: [],
       headings: [],
+      apiKey : process.env.VUE_APP_GOOGLE_API,
     };
   },
   methods: {
